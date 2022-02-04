@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1> how to trace location</h1>
+	<button onclick="geolocation()" >Get location</button>
+	<div id="output"></div>
+	<script type="text/javascript">
+		var x=document.getElementById('output');
+		function geolocation ()
+		{
+			//alert("hello");
+			if(navigator.geolocation)
+			{
+				//x.innerHTML="supporting!!"
+				navigator.geolocation.getCurrentPosition(showPosition);
+
+			}
+			else
+			{
+				x.innerHTML="not supporting !!!";
+
+			}
+			//we will print here value we got in position object
+			function showPosition(position)
+			{
+				x.innerHTML="Latitude=" +position.coord.latitude
+				+"Longitude="+position.coord.longitude;
+
+
+				//x.innerHTML="Longitude = "+position.coord.longitude;
+
+			}
+		}
+	</script>
+
+</body>
+</html>
